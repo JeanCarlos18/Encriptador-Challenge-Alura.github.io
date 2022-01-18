@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Encriptador_challenge-jean</title>
+</head>
+<body>
+  <main class="main">
+  <h1 class="titulo-principal">Encriptador</h1>
+  <section>
+    <div class="formEncritador">
+      <h2 class="titulo-Encriptador">Ingrese el texto</h2>
+      <textarea id="entrada" rows="10" cols="50" onchange="this.value=this.value.toLowerCase();" placeholder="solo letras minusculas, sin acento ni caracteres especiales..."></textarea>
+      <br>
+      <button onclick="encriptar()"> Encriptar! </button>
+      <button onclick='desencriptar()'>Desencriptar</button>
+    </div>
+    <div class="formResultado">
+      <h2 class="titulo-resultado">Resultado</h2>
+      <textarea id="salida" rows="10" cols="50" onchange="this.value=this.value.toLowerCase();"></textarea>
+      <button onclick="copiar()">copiar</button>
+<footer>
+  <div class="derechosAutor">
+    <p>Creador Jean Carlos Villarroel @</p>
+  </div>
+</footer>
+    </div>
+  </section>
+  <script src="script.js"></script>
+
+</main>
+</body>
+</html>
