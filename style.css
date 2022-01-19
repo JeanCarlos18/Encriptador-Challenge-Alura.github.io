@@ -1,16 +1,13 @@
 body{
   background-color: black;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  
 }
+.main{
+text-align: center;
+  }
 .titulo-principal{
   text-align: center;
   color:red;
-}
-.formEncritador{
-  text-align: left;
-  width: 30%;
-  text-align: center;
 }
 .titulo-Encriptador{
   color:red;
@@ -30,8 +27,4 @@ button{
 }
 footer{
   color: blue;
-}
-.main{
-
-justify-content: center;
 }
