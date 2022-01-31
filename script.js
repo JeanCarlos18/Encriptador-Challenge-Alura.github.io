@@ -1,41 +1,48 @@
+function validarTexto(){
+    var textoIngresado=document.querySelector("#entrada").value;
+    if (/[~!@#$%^&*()_+|}{[\]\\\/?><:"`;.,áéíóúàèìòù']/.test(textoIngresado)||
+          (/[0-9]/.test(textoIngresado))||
+          (/[A-Z]/.test(textoIngresado))){
+    
+            alert("No se permiten caracteres especiales ni mayusculas");    
+            validacion=false;
+      }
+      else if ((textoIngresado=="")){
 
-/* Reglas de encriptación: 
-"e" es convertido para "enter" 
-"i" es convertido para "imes"
-"a" es convertido para "ai"
-"o" es convertido para "ober"
-"u" es convertido para "ufat"
-Solo letras minusculas
-No se permite acentuación de palabras 
-*/
+        alert("Ingrese un mensaje para encriptar / desencriptar");    
+        validacion=false;
+  }
 
-/* Reglas de desencriptación: 
-"enter" es convertido para "e" 
-"imes" es convertido para "i"
-"ai" es convertido para "a"
-"ober" es convertido para "o"
-"ufat" es convertido para "u"
-Solo letras minusculas
-No se permite acentuación de palabras   
-*/
-//replace(/e/gi, 'enter').replace(/i/gi, 'imes').replace(/a/gi, 'ai').replace(/o/gi, 'ober').replace(/u/gi, 'ufat');
+  else{
 
+    validacion=true;
+    
+  }};
+//
 function copiar(){
     const copyText = document.getElementById("salida");
     copyText.select();
     document.execCommand("Copy");
-}
+    document.getElementById("entrada").value=" "
 
+}
+//
 function encriptar(){
-        const encriptar = document.getElementById('entrada').value;
-        const encriptado = encriptar.replace(/e/gi, 'enter').replace(/i/gi, 'imes').replace(/a/gi, 'ai').replace(/o/gi, 'ober').replace(/u/gi, 'ufat');
+    validarTexto();
+        if (validacion==true){
+            var encriptar=document.querySelector("#entrada").value
+            var encriptado = encriptar.replace(/e/gi, 'enter').replace(/i/gi, 'imes').replace(/a/gi, 'ai').replace(/o/gi, 'ober').replace(/u/gi, 'ufat');
         document.getElementById("salida").value = encriptado
         document.getElementById("entrada").value=" "
+        }
     }
-
-
+//
 function desencriptar(){
-        const desencriptar= document.getElementById ("entrada").value;
-        const desencriptado= desencriptar.replace(/ai/gi, 'a').replace(/enter/gi, 'e').replace(/imes/gi, 'i').replace(/ober/gi, 'o').replace(/ufat/gi, 'u');
-        document.getElementById("salida").value = desencriptado
+    validarTexto();
+        if (validacion==true){
+            var desencriptar=document.querySelector("#salida").value;
+            var desencriptado= desencriptar.replace(/ai/gi, 'a').replace(/enter/gi, 'e').replace(/imes/gi, 'i').replace(/ober/gi, 'o').replace(/ufat/gi, 'u');
+            document.getElementById("salida").value = desencriptado
+        }
     }
+
